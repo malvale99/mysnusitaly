@@ -1,118 +1,63 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SnusItaly - Presto Online</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: linear-gradient(45deg, #141E30, #243B55);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            overflow: hidden;
-            animation: gradientBG 8s ease infinite alternate;
-        }
-
-        @keyframes gradientBG {
-            0% { background: linear-gradient(45deg, #141E30, #243B55); }
-            100% { background: linear-gradient(45deg, #0f2027, #2c5364); }
-        }
-
-        .container {
-            max-width: 600px;
-            padding: 20px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 60px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            background: linear-gradient(90deg, #FFD700, #FFAE42);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            font-size: 22px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .countdown {
-            font-size: 28px;
-            font-weight: bold;
-            color: #FFD700;
-            margin-top: 20px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .neon-text {
-            font-size: 20px;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
-            text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFAE42;
-            animation: glow 1.5s infinite alternate;
-        }
-
-        @keyframes glow {
-            0% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFAE42; }
-            100% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFAE42, 0 0 30px #FFAE42; }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>SnusItaly</h1>
-        <p class="subtitle">⚡ Il miglior snus sta arrivando! ⚡</p>
-        <p class="neon-text">Presto Online</p>
-        <p class="countdown" id="countdown">⌛ Manca poco al nostro lancio...</p>
-    </div>
-
-    <script>
-        function countdownTimer() {
-            const launchDate = new Date("April 15, 2025 00:00:00").getTime();
-            const timer = setInterval(() => {
-                const now = new Date().getTime();
-                const difference = launchDate - now;
-
-                if (difference <= 0) {
-                    document.getElementById("countdown").innerHTML = "🚀 Siamo online!";
-                    clearInterval(timer);
-                } else {
-                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                    document.getElementById("countdown").innerHTML = `⌛ ${days}g ${hours}h ${minutes}m ${seconds}s`;
-                }
-            }, 1000);
-        }
-
-        countdownTimer();
-    </script>
-</body>
-</html>
+ <html lang="it">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>SnusItaly - Presto Online</title>
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+     <style>
+         * {
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+         }
+ 
+         body {
+             background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+             height: 100vh;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             text-align: center;
+             color: white;
+             font-family: 'Poppins', sans-serif;
+         }
+ 
+         .container {
+             max-width: 600px;
+             padding: 20px;
+         }
+ 
+         h1 {
+             font-family: 'Playfair Display', serif;
+             font-size: 48px;
+             font-weight: 700;
+             margin-bottom: 10px;
+             animation: fadeIn 1.5s ease-in-out;
+         }
+ 
+         p {
+             font-size: 18px;
+             margin-bottom: 20px;
+             opacity: 0.8;
+         }
+ 
+         .countdown {
+             font-size: 24px;
+             font-weight: bold;
+         }
+ 
+         @keyframes fadeIn {
+             from { opacity: 0; transform: translateY(-20px); }
+             to { opacity: 1; transform: translateY(0); }
+         }
+     </style>
+ </head>
+ <body>
+     <div class="container">
+         <h1>SnusItaly</h1>
+         <p>⚡ Presto Online! ⚡</p>
+         <p class="countdown">Manca poco al nostro lancio ufficiale!</p>
+     </div>
+ </body>
+ </html>
